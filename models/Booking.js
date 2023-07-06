@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
 
-const { Schema } = mongoose;
+const { ObjectId } = mongoose.Schema;
 
-const { ObjectId } = Schema;
-
-const bookingSchema = new Schema({
+const bookingSchema = new mongoose.Schema({
   bookingStartDate: {
     type: Date,
     required: true,

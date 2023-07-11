@@ -63,6 +63,11 @@ module.exports = {
     }
   },
 
+  actionLogout: (req, res) => {
+    req.session.destroy();
+    res.redirect("/admin/signin");
+  },
+
   viewDashboard: (req, res) => {
     res.render("admin/dashboard/view_dashboard", {
       title: "Staycation | Dashboard",

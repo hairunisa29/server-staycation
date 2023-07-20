@@ -6,10 +6,11 @@ var logger = require("morgan");
 const methodOverride = require("method-override");
 const session = require("express-session");
 const flash = require("connect-flash");
+require("dotenv").config();
 
 // import mongoose
 var mongoose = require("mongoose");
-mongoose.connect("mongodb+srv://hairunisa:Stayc4tions3rver@cluster.hq6xof7.mongodb.net/db-staycation?retryWrites=true&w=majority", {
+mongoose.connect(`mongodb+srv://hairunisa:${process.env.DB_PASS}@cluster.hq6xof7.mongodb.net/db-staycation?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,

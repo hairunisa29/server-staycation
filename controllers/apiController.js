@@ -110,7 +110,6 @@ module.exports = {
     const {
       idItem,
       duration,
-      // price,
       bookingStartDate,
       bookingEndDate,
       firstName,
@@ -128,7 +127,6 @@ module.exports = {
     if (
       idItem === undefined ||
       duration === undefined ||
-      // price === undefined ||
       bookingStartDate === undefined ||
       bookingEndDate === undefined ||
       firstName === undefined ||
@@ -138,7 +136,7 @@ module.exports = {
       accountHolder === undefined ||
       bankFrom === undefined
     ) {
-      return res.status(404).json({ message: "All fields are required" });
+      return res.status(400).json({ message: "Bad Request" });
     }
 
     const item = await Item.findOne({ _id: idItem });
